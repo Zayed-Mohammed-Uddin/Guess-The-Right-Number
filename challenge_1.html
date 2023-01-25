@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge_1: Guess the right number</title>
+    <link rel="shortcut icon" href="./apple-touch-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./challenge_1.css">
+</head>
+<body>
+    <section>
+        <div class="upper_section">
+            <div class="again_indicator">
+                <input type="reset" id="againBtn" value="Reset"> 
+            </div>
+            <div class="number_range">
+                <h4>&lt;Between 1 and 20&gt;</h4>
+            </div>
+        </div>
+        <div class="middle_section">
+            <div class="heading_text">
+                <h1>Guess My Number!</h1>
+            </div>
+            <div class="question_mark">
+                <h1 id="displayRandomNumber">?</h1>
+            </div>
+        </div>
+        <div class="lower_section">
+            <div class="sub_section_left">
+                <form id="gameForm" action="#">
+                    <label for="inputText"></label>
+                    <input type="number" name="inputText" id="inputText" placeholder="Enter">
+                    <br>
+                    <label for="submitBtn"></label>
+                    <input id="checkBtn" type="button" value="Check!">
+                </form>
+            </div>
+            <div class="sub_section_right">
+                <div class="sub_section_heading">
+                    <h3 id="sub_section_title"><span>💭</span> Start Guessing...</h3>
+                    <br><br>
+                    <h3><span>💯</span> Score: <span id="gameLife">20</span></h3>
+                    <br>
+                    <h3><span>🥇</span> Winning Streak: <span id="winStreak">0</span></h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./challenge_1.js"></script>
+</body>
+</html>
