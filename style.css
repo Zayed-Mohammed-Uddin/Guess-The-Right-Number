@@ -18,7 +18,7 @@
 }
 html {
 	overflow: scroll;
-	overflow-x: hidden;	
+	overflow-x: hidden;
 }
 ::-webkit-scrollbar {
 	width: 0px;
@@ -100,9 +100,10 @@ input[type="button"] {
 	left: 0;
 	background-color: var(--primary-TextColor);
 	height: 20px;
-	width: 44.7%;
+	width: 100%;
 	position: absolute;
 	top: 62%;
+	z-index: -1;
 }
 .question_mark::after {
 	content: "";
@@ -156,6 +157,12 @@ input[type="number"]::placeholder {
 }
 
 /* Beginning of the Responsive Design */
+@media screen and (max-width: 280px) {
+	.question_mark::before,
+	.question_mark::after {
+		top: 66%;
+	}
+}
 @media screen and (min-width: 280px) and (max-width: 700px) {
 	.upper_section {
 		flex-direction: column;
@@ -186,6 +193,10 @@ input[type="number"]::placeholder {
 	}
 	.sub_section_right {
 		margin-bottom: 30px;
+	}
+	.question_mark::before,
+	.question_mark::after {
+		top: 65%;
 	}
 }
 /* End of the Responsive Design */
