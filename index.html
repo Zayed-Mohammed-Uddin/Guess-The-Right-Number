@@ -1,236 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Guess The Random Number</title>
-		<link href="./node_modules/bootstrap.min.css" rel="stylesheet" />
-		<link
-			rel="stylesheet"
-			href="./fontawesome-pro-master/css/all.min.css"
-		/>
-		<link rel="stylesheet" href="./style.css" />
-	</head>
-	<body id="bodyColor" onload="startGame()">
-		<!-- modal pop-up for game-lost -->
-		<div
-			class="modal fade"
-			id="myModal"
-			data-bs-backdrop="static"
-			data-bs-keyboard="false"
-			tabindex="-1"
-			aria-labelledby="ModalLabel"
-			aria-hidden="true"
-		>
-			<div
-				class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
-			>
-				<div class="modal-content bg-dark border-danger">
-					<div class="modal-header py-4">
-						<h5
-							class="modal-title text-center w-100 text-danger display-3"
-							id="ModalLabel"
-						>
-							<i class="fa-solid fa-brake-warning"></i>
-						</h5>
-					</div>
-					<div
-						class="modal-body text-center d-flex flex-column align-items-center justify-content-center"
-						style="line-height: 30px"
-					>
-						<h5 class="text-white">
-							<i class="fa-solid fa-wagon-covered display-6"></i>
-							You lost the game...!
-						</h5>
-						<h5 class="text-white">
-							<i
-								class="fa-solid fa-hand-fingers-crossed display-6"
-							></i>
-							Good Luck!
-						</h5>
-					</div>
-					<div class="modal-footer">
-						<button
-							type="button"
-							class="btn btn-secondary"
-							id="closebutton"
-							data-bs-dismiss="modal"
-						>
-							Close
-						</button>
-					</div>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Guess The Random Number</title>
+	<link href="./node_modules/bootstrap.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="./fontawesome-pro-master/css/all.min.css" />
+	<link rel="stylesheet" href="./style.css" />
+</head>
+
+<body id="bodyColor" onload="startGame()">
+	<!-- modal pop-up for game-lost -->
+	<div class="modal fade" id="myModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+		aria-labelledby="ModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+			<div class="modal-content bg-dark border-danger">
+				<div class="modal-header py-4">
+					<h5 class="modal-title text-center w-100 text-danger display-3" id="ModalLabel">
+						<i class="fa-solid fa-brake-warning"></i>
+					</h5>
+				</div>
+				<div class="modal-body text-center d-flex flex-column align-items-center justify-content-center"
+					style="line-height: 30px">
+					<h5 class="text-white">
+						<i class="fa-solid fa-wagon-covered display-6"></i>
+						You lost the game...!
+					</h5>
+					<h5 class="text-white">
+						<i class="fa-solid fa-hand-fingers-crossed display-6"></i>
+						Good Luck!
+					</h5>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" id="closebutton" data-bs-dismiss="modal">
+						Close
+					</button>
 				</div>
 			</div>
 		</div>
-		<!-- modal pop-up for game-win -->
-		<div
-			class="modal fade"
-			id="myModalTwo"
-			data-bs-backdrop="static"
-			data-bs-keyboard="false"
-			tabindex="-1"
-			aria-labelledby="ModalLabel"
-			aria-hidden="true"
-		>
-			<div
-				class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
-			>
-				<div class="modal-content bg-dark border-danger">
-					<div class="modal-header py-4">
-						<h5
-							class="modal-title text-center w-100 text-danger display-3"
-						>
-							<i class="fa-solid fa-trophy-star"></i>
-						</h5>
-					</div>
-					<div
-						class="modal-body text-center d-flex flex-column align-items-center justify-content-center"
-						style="line-height: 30px"
-					>
-						<h5 class="text-white">
-							<i class="fa-regular fa-award display-6"></i>
-							You won the game...!
-						</h5>
-						<h5 class="text-white">
-							<i class="fa-regular fa-face-awesome display-6"></i>
-							Wow!
-						</h5>
-					</div>
-					<div class="modal-footer">
-						<button
-							type="button"
-							class="btn btn-secondary"
-							id="closeBtn"
-							data-bs-dismiss="modal"
-						>
-							Close
-						</button>
-					</div>
+	</div>
+	<!-- modal pop-up for game-win -->
+	<div class="modal fade" id="myModalTwo" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+		aria-labelledby="ModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+			<div class="modal-content bg-dark border-danger">
+				<div class="modal-header py-4">
+					<h5 class="modal-title text-center w-100 text-danger display-3">
+						<i class="fa-solid fa-trophy-star"></i>
+					</h5>
+				</div>
+				<div class="modal-body text-center d-flex flex-column align-items-center justify-content-center"
+					style="line-height: 30px">
+					<h5 class="text-white">
+						<i class="fa-regular fa-award display-6"></i>
+						You won the game...!
+					</h5>
+					<h5 class="text-white">
+						<i class="fa-regular fa-face-awesome display-6"></i>
+						Wow!
+					</h5>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" id="closeBtn" data-bs-dismiss="modal">
+						Close
+					</button>
 				</div>
 			</div>
 		</div>
-		<section
-			class="container-fluid d-flex align-items-center justify-content-center"
-		>
-			<div class="container" style="max-width: fit-content">
-				<div class="row gy-5 mb-5">
-					<div class="col-md-12">
-						<div
-							class="wrapper d-flex align-items-center justify-content-between"
-						>
-							<div class="resetBtn">
-								<input
-									type="reset"
-									value="Again!"
-									class="btn btn-primary btn-lg p-3 btn-outline-success border-0"
-									id="resetBtn"
-								/>
-							</div>
-							<div class="rangeText">
-								<h6>&lt;Between 1 and 20&gt;</h6>
-							</div>
+	</div>
+	<section class="container-fluid d-flex align-items-center justify-content-center">
+		<div class="container" style="max-width: fit-content">
+			<div class="row gy-5 mb-5">
+				<div class="col-md-12">
+					<div class="wrapper d-flex align-items-center justify-content-between">
+						<div class="resetBtn">
+							<input type="reset" value="Again!"
+								class="btn btn-primary btn-lg p-3 btn-outline-success border-0" id="resetBtn" />
+						</div>
+						<div class="rangeText">
+							<h6>&lt;Between 1 and 20&gt;</h6>
 						</div>
 					</div>
 				</div>
-				<div class="row mb-5">
-					<div class="col-md-12">
-						<header class="header text-center mb-5">
-							<h1>
-								<i
-									class="fa-light fa-face-thinking fa-shake display-3"
-								></i>
-								<span
-									class="txt-type"
-									data-wait="3000"
-									data-words='["Guess My Number!", "The Game Will Prove You-Know-What ", "Show Me If You Can Hit 5 Streak!"]'
-								></span>
+			</div>
+			<div class="row mb-5">
+				<div class="col-md-12">
+					<header class="header text-center mb-5">
+						<h1>
+							<i class="fa-light fa-face-thinking fa-shake display-3"></i>
+							<span class="txt-type" data-wait="3000"
+								data-words='["Guess My Number!", "The Game Will Prove You-Know-What ", "Show Me If You Can Hit 5 Streak!"]'></span>
+						</h1>
+					</header>
+				</div>
+				<div class="col-md-12 position-relative">
+					<div class="col-md-3 col-sm-4 col-lg-2 col-xxl-2 col-5 relative-width mx-auto">
+						<div class="displayNumber text-center py-3">
+							<h1 id="displayNumberBox" style="font-size: 60px">
+								?
 							</h1>
-						</header>
-					</div>
-					<div class="col-md-12 position-relative">
-						<div
-							class="col-md-3 col-sm-4 col-lg-2 col-xxl-2 col-5 relative-width mx-auto"
-						>
-							<div class="displayNumber text-center py-3">
-								<h1
-									id="displayNumberBox"
-									style="font-size: 60px"
-								>
-									?
-								</h1>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row mb-5">
-					<div class="col-md-6">
-						<div class="inputNumberBox mx-auto">
-							<form id="gameForm" action="#">
-								<input
-									type="number"
-									name="number"
-									class="form-control text-center py-2"
-									placeholder="Enter"
-									id="numberBox"
-								/>
-								<br />
-								<input
-									type="button"
-									value="Check!"
-									class="btn btn-success btn-lg mt-1 btn-outline-primary p-3 w-100 border-0"
-									id="checkBtn"
-								/>
-							</form>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="gameInfo">
-							<div class="gameTitle">
-								<header class="gameInfoTitle">
-									<h5 id="numberMeasurement">
-										<i
-											class="fa-light fa-thought-bubble"
-											style="font-size: 2rem"
-										></i>
-										Start Guessing...<span
-											class="animation fa-fade"
-											>!</span
-										>
-									</h5>
-								</header>
-							</div>
-							<div class="gameInfoDesc">
-								<h5 class="lh-lg">
-									<i
-										class="fa-regular fa-hundred-points fa-fade text-success"
-										id="hundredPoints"
-										style="font-size: 2rem"
-									></i>
-									Score: <span id="gameLife">20</span>
-								</h5>
-								<span class="scoreCount"></span>
-								<h5 class="lh-lg">
-									<i
-										class="fa-solid fa-medal fa-fade text-primary"
-										id="medal"
-										style="font-size: 2rem"
-									></i>
-									Winning Streak:
-									<span id="winStreak">0</span>
-								</h5>
-							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<!-- </div> -->
-		</section>
-		<script src="./jquery-3.6.0.min.js"></script>
-		<script src="./node_modules/bootstrap.min.js"></script>
-		<script src="./node_modules/popper.min.js"></script>
-		<script src="./fontawesome-pro-master/js/all.min.js"></script>
-		<script src="./typewriter.js"></script>
-		<script src="./app.js"></script>
-	</body>
+			<div class="row mb-5">
+				<div class="col-md-6">
+					<div class="inputNumberBox mx-auto">
+						<form id="gameForm" action="#">
+							<input type="number" name="number" class="form-control text-center py-2" placeholder="Enter"
+								id="numberBox" />
+							<br />
+							<input type="button" value="Check!"
+								class="btn btn-success btn-lg mt-1 btn-outline-primary p-3 w-100 border-0"
+								id="checkBtn" />
+						</form>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="gameInfo">
+						<div class="gameTitle">
+							<header class="gameInfoTitle">
+								<h5 id="numberMeasurement">
+									<i class="fa-light fa-thought-bubble" style="font-size: 2rem"></i>
+									Start Guessing...<span class="animation fa-fade">!</span>
+								</h5>
+							</header>
+						</div>
+						<div class="gameInfoDesc">
+							<h5 class="lh-lg">
+								<i class="fa-regular fa-hundred-points fa-fade text-success" id="hundredPoints"
+									style="font-size: 2rem"></i>
+								Score: <span id="gameLife">20</span>
+							</h5>
+							<span class="scoreCount"></span>
+							<h5 class="lh-lg">
+								<i class="fa-solid fa-medal fa-fade text-primary" id="medal"
+									style="font-size: 2rem"></i>
+								Winning Streak:
+								<span id="winStreak">0</span>
+							</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- </div> -->
+	</section>
+	<script src="./jquery-3.6.0.min.js"></script>
+	<script src="./node_modules/bootstrap.min.js"></script>
+	<script src="./node_modules/popper.min.js"></script>
+	<script src="./fontawesome-pro-master/js/all.min.js"></script>
+	<script src="./typewriter.js"></script>
+	<script src="./app.js"></script>
+</body>
+
 </html>
