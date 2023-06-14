@@ -1,0 +1,16 @@
+{
+	"dependencies": {
+		"bootstrap": "^5.3.0-alpha3"
+	},
+	"name": "guess-the-random-number",
+	"version": "1.0.0",
+	"main": "app.js",
+	"devDependencies": {},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "Zayed M. Uddin",
+	"license": "ISC",
+	"description": "Guessing the right number"
+}

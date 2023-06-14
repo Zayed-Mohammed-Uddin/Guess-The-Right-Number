@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
+:root {
+	--winingBackgroundColor: #60b347;
+	--losingBackgroundColor: #ff0000;
+	--primaryFontFamily: "Press Start 2P", sans-serif;
+	--primaryFontColor: #eee;
+	--primaryBackgroundColor: #222;
+	--primaryLetterSpacing: 3.5px;
+	--secondaryBackgroundColor: #fff;
+	--primaryPosition: relative;
+	--secondaryPosition: absolute;
+	--primaryMinHeight: 100vh;
+}
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: var(--primaryFontFamily);
+	color: var(--primaryFontColor);
+	background-color: var(--primaryBackgroundColor);
+	letter-spacing: var(--primaryLetterSpacing);
+}
+section {
+	height: var(--primaryMinHeight);
+}
+.displayNumber::before,
+.displayNumber::after {
+	content: "";
+	position: var(--secondaryPosition);
+	width: 50%;
+	height: 10px;
+	background: papayawhip;
+	top: 43.5%;
+	z-index: -1;
+}
+.displayNumber::before {
+	left: 0;
+}
+.displayNumber::after {
+	right: 0;
+}
+.displayNumber {
+	background-color: var(--secondaryBackgroundColor);
+	color: var(--primaryBackgroundColor);
+}
+.gameTitle {
+	margin-bottom: 5rem;
+}
+.inputNumberBox {
+	width: 40%;
+}
+input[type="number"] {
+	font-size: 60px;
+}
+input[type="number"]::placeholder {
+	font-size: 25px;
+	position: var(--secondaryPosition);
+	left: 25%;
+	top: 40.5%;
+	letter-spacing: var(--primaryLetterSpacing);
+}
+input[type="button"],
+input[type="reset"] {
+	color: var(--primaryFontColor);
+	letter-spacing: inherit;
+}
+/* Responsive section */
+@media screen and (max-width: 280px) {
+	input[type="button"] {
+		font-size: 10px;
+	}
+	.inputNumberBox {
+		width: 100%;
+	}
+	input[type="number"]::placeholder {
+		left: 27.5% !important;
+	}
+}
+
+@media screen and (min-width: 280px) and (max-width: 630px) {
+	.header > * {
+		font-size: 20px;
+	}
+	#displayNumberBox {
+		font-size: 45px !important;
+	}
+	input[type="number"] {
+		font-size: 45px !important;
+	}
+	input[type="number"]::placeholder {
+		font-size: 15px;
+		left: 18.5%;
+	}
+	input[type="button"],
+	input[type="reset"] {
+		font-size: 15px;
+	}
+	input[type="button"] {
+		margin-left: 0 !important;
+		margin-bottom: 3rem;
+	}
+	#numberMeasurement,
+	.gameInfoDesc > * {
+		font-size: 1rem !important;
+		text-align: center;
+	}
+	.gameTitle {
+		margin-bottom: 3rem;
+	}
+	svg {
+		font-size: 1.7rem !important;
+	}
+	section {
+		margin-top: 130px;
+	}
+}
+@media screen and (min-width: 280px) and (max-width: 630px) {
+	.wrapper {
+		flex-direction: column;
+		justify-content: center !important;
+	}
+	.resetBtn {
+		margin-bottom: 1.5rem;
+	}
+}
+@media screen and (min-width: 400px) and (max-width: 500px) {
+	section {
+		margin-top: 85px;
+	}
+}
+@media screen and (min-width: 501px) and (max-width: 530px) {
+	section {
+		margin-top: 130px;
+	}
+}
+@media screen and (min-width: 531px) and (max-width: 700px) {
+	section {
+		margin-top: 100px;
+	}
+}
+@media screen and (min-width: 701px) and (max-width: 767.98px) {
+	section {
+		margin-top: 100px;
+	}
+	input[type="button"] {
+		margin-bottom: 3rem;
+	}
+}
+@media screen and (min-width: 767.98px) and (max-width: 991.98px) {
+	section {
+		margin-top: 20px;
+	}
+	input[type="number"]::placeholder {
+		font-size: 15px;
+		left: 26.5%;
+	}
+	input[type="button"] {
+		font-size: 15px;
+	}
+}
+@media screen and (min-width: 991.98px) and (max-width: 1200px) {
+	input[type="number"]::placeholder {
+		font-size: 20px;
+		left: 21.5%;
+	}
+}
+@media screen and (min-width: 1400px) {
+	.relative-width {
+		width: 13%;
+	}
+}
